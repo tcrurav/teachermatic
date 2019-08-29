@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -55,7 +57,7 @@ io.on('connection', function (socket) {
 
 var checkClassroomActivity_controller = require('./controllers/classroom.checkClassroomActivity');
 
-let port = 1234;
+let port = process.env.PORT || 3000;
 server.listen(port, () => {
   console.log('Server is up and running on port numner ' + port);
 
