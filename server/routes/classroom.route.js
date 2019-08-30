@@ -5,7 +5,7 @@ const classroom_controller = require('../controllers/classroom.controller');
 
 
 // a simple test url to check that all of our files are communicating correctly.
-//router.get('/test', student_controller.test);
+router.get('/test', classroom_controller.test);
 router.post('/create', classroom_controller.classroom_create);
 router.get('/byId/:id', classroom_controller.classroom_details_by_id);
 router.get('/byName/:classroomName', classroom_controller.classroom_details_by_name);

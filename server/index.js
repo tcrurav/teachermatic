@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+//import dotenv from 'dotenv';
 require('dotenv').config();
 
 const express = require('express');
@@ -57,7 +57,7 @@ io.on('connection', function (socket) {
 
 var checkClassroomActivity_controller = require('./controllers/classroom.checkClassroomActivity');
 
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 8080;
 server.listen(port, () => {
   console.log('Server is up and running on port numner ' + port);
 
