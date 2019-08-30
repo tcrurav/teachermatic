@@ -1,0 +1,64 @@
+img{
+    // height: 70vh;
+    // width: auto;
+    margin: auto;
+    margin-bottom: 2em;
+    display: block;
+}
+
+@font-face {
+    font-family: "D7MBI";
+    src: url("../../assets/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff") format('woff');
+}
+
+.your-turn, .your-ticket {
+    position: relative;
+}
+
+.ticket {
+    position: absolute;
+    top: 55%;
+    left: 22%;
+    transform: translate(-55%, -22%);
+    font-size: 2em;
+    // font-weight: bold;
+}
+
+.turn {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    font-family: "D7MBI";
+    font-size: 4em;
+    color: red;
+}
+
+.request-ticket {
+    padding-top: 2em;
+}
+
+.message-info-remark, .message-remark {
+    font-weight: bolder;
+}
+
+.message {
+    font-weight: bold;
+    text-align: left;
+    margin-left: 2em;
+}
+
+.message-info {
+    font-weight: bold;
+    text-align: left;
+    margin: 0 2em;
+    padding: 0 2em;
+}
+
+ion-button {
+    margin: 2em;
+}
+
+ion-card-content {
+    padding: 0.5em 1em !important;
+}

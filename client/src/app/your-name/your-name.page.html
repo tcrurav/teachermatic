@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>TeacherMatic</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding="true">
+
+  <div>
+    <img src="../../assets/man-writes-relaxes.jpg"/>
+  </div>
+
+  <form [formGroup]="yourNameForm" (ngSubmit)="onSubmit(yourNameForm.value)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Your Name</ion-label>
+        <ion-input formControlName="yourName" type="text"
+                    [class.invalid]="!yourNameForm.controls.yourName.valid 
+                                    && (yourNameForm.controls.yourName.dirty || submitAttempt)">
+        </ion-input>
+      </ion-item>
+
+      <div *ngIf="submitAttempt && yourNameForm.controls.yourName.errors">
+        <p *ngIf="yourNameForm.controls.yourName.errors.required">*field is required!</p>
+        <p *ngIf="yourNameForm.controls.yourName.errors.minlength">*field must be at least 6 characters!
+        </p>
+      </div>
+    </ion-list>
+
+    <ion-button expand="block" type="submit">Next &gt;&gt;</ion-button>
+        
+  </form>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>TeacherMatic</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding="true">
+  <div class="your-turn">
+    <span class="turn">{{attendingToFormatted}}</span>
+    <img src="../../assets/your-turn.png" />
+  </div>
+
+  <div *ngIf="yourTicket != 0" class="your-ticket">
+    <span class="ticket">{{yourTicketFormatted}}</span>
+    <span class="message-for-student">{{messageForStudent}}</span>
+    <img src="../../assets/your-ticket.png" />
+  </div>
+
+  <div *ngIf="yourTicket == 0" class="request-ticket">
+    <ion-button color="primary" expand="block" (click)="requestTicket()">
+      Request ticket
+    </ion-button>
+  </div>
+
+</ion-content>

@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 require('dotenv').config();
 
 const express = require('express');
@@ -17,9 +18,8 @@ app.use(cors());
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
-//let dev_db_url = 'mongodb://teachermatic:teachermatic@ds123619.mlab.com:23619/teachermatic';
-let dev_db_url = 'mongodb+srv://teachermatic:teachermatic@cluster0-rjiye.mongodb.net/teachermatic?retryWrites=true&w=majority';
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
+let dev_db_url = '';
+const mongoDB = process.env.MONGODB || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;

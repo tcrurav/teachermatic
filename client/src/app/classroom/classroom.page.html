@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>TeacherMatic</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding="true">
+  <div>
+    <img src="../../assets/cabinet-discussing-facial-expression-1181398.jpg"/>
+  </div>
+  <form [formGroup]="classroomForm" (ngSubmit)="onSubmit(classroomForm.value)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Classroom Name</ion-label>
+        <ion-input formControlName="classroomName" type="text" autocapitalize="characters" [class.invalid]="!classroomForm.controls.classroomName.valid 
+                                    && (classroomForm.controls.classroomName.dirty || submitAttempt)">
+        </ion-input>
+      </ion-item>
+
+      <div *ngIf="submitAttempt && classroomForm.controls.classroomName.errors">
+        <p *ngIf="classroomForm.controls.classroomName.errors.required">*field is required!</p>
+        <p *ngIf="classroomForm.controls.classroomName.errors.minlength">*field must be at least 6 characters!
+        </p>
+      </div>
+    </ion-list>
+
+    <ion-button expand="block" type="submit">Next &gt;&gt;</ion-button>
+    
+  </form>
+</ion-content>

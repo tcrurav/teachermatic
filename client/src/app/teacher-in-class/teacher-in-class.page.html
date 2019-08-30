@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>TeacherMatic</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="success">
+    <ion-card-content>
+      <div class="messsage-info">Your classroom name is <span
+        class="message-info-remark">{{classroomName | uppercase}}</span>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="your-turn">
+    <span class="turn">{{attendingToFormatted}}</span>
+    <img src="../../assets/your-turn.png" />
+  </div>
+
+  <div *ngIf="studentsWaiting > 0">
+    <ion-button color="primary" expand="block" (click)="attendNextStudent()">
+      Attend next student
+    </ion-button>
+  </div>
+
+  <div *ngIf="studentBeingAttended">
+    <p class="message">Attending to <span class="message-remark">{{studentBeingAttended | uppercase}}</span>.</p>
+  </div>
+
+  <div *ngIf="studentsWaiting > 1">
+    <p class="message">{{studentsWaiting}} students waiting...</p>
+  </div>
+
+  <div *ngIf="studentsWaiting == 1">
+    <p class="message">1 student is waiting...</p>
+  </div>
+
+  <div *ngIf="studentsWaiting == 0">
+    <p class="message">No students waiting...</p>
+  </div>
+
+</ion-content>

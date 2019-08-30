@@ -1,0 +1,48 @@
+img{
+    // height: 70vh;
+    // width: auto;
+    margin: auto;
+    display: block;
+}
+
+@font-face {
+    font-family: "D7MBI";
+    src: url("../../assets/fonts/DSEG7-Classic/DSEG7Classic-Bold.woff") format('woff');
+}
+
+.your-turn, .your-ticket {
+    position: relative;
+}
+
+.ticket {
+    position: absolute;
+    top: 55%;
+    left: 20%;
+    transform: translate(-55%, -20%);
+    font-size: 2em;
+    // font-weight: bold;
+}
+
+.turn {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    font-family: "D7MBI";
+    font-size: 4em;
+    color: red;
+}
+
+.request-ticket {
+    padding-top: 2em;
+}
+
+.message-for-student {
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    // transform: translate(-40%, -80%);
+    font-weight: bolder;
+    text-align: center;
+    color: red;
+}
